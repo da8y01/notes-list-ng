@@ -11,6 +11,8 @@ import { InputBoxComponent } from './input-box/input-box.component';
 
 import { HttpErrorHandler } from './services/http-error-handler.service';
 import { MessageService } from './services/message.service';
+import { MediaQueryStatusComponent } from './media-query-status.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -19,13 +21,15 @@ import { MessageService } from './services/message.service';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: InputBoxComponent },
-    ])
+    ]),
+    FlexLayoutModule
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    InputBoxComponent
+    InputBoxComponent,
+    MediaQueryStatusComponent
   ],
   providers: [
     HttpErrorHandler,

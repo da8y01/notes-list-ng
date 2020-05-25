@@ -1,9 +1,11 @@
 <div>
-  <label>Note:
-    <input #noteText />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(noteText.value); noteText.value=''">
-    add
-  </button>
+  <div fxFlex="15">
+    <input #noteText placeholder="Type note here..." />
+  </div>
+  <div>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(noteText.value); noteText.value=''">add</button>
+  </div>
 </div>
+
+<media-query-status></media-query-status>
