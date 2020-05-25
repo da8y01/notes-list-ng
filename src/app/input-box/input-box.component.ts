@@ -9,7 +9,7 @@ import { NotesService } from '../services/notes.service';
   styleUrls: ['./input-box.component.css']
 })
 export class InputBoxComponent implements OnInit {
-  notes: Note[];
+  notes: Note[] = [];
   editNote: Note; // the hero currently being edited
 
   constructor(private notesService: NotesService) { }
@@ -17,15 +17,15 @@ export class InputBoxComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  add(text: string): void {
+  add(content: string): void {
     this.editNote = undefined;
-    text = text.trim();
-    if (!text) {
+    content = content.trim();
+    if (!content) {
       return;
     }
 
     // The server will generate the id for this new hero
-    const newNote: Note = { text } as Note;
+    const newNote: Note = { content } as Note;
     this.notesService
       .addNote(newNote)
       .subscribe(note => this.notes.push(note));

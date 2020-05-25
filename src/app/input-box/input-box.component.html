@@ -1,10 +1,10 @@
 <div>
   <div fxFlex="15">
-    <input #noteText placeholder="Type note here..." />
+    <input #noteContent placeholder="Type note here..." />
   </div>
   <div>
     <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="add(noteText.value); noteText.value=''">add</button>
+    <button (click)="add(noteContent.value); noteContent.value=''">add</button>
   </div>
 </div>
 

@@ -18,7 +18,7 @@ const httpOptions = {
 
 @Injectable()
 export class NotesService {
-  notesUrl = 'api/notes';  // URL to web api
+  notesUrl = 'http://localhost:3000/notes';  // URL to web api
   private handleError: HandleError;
 
   constructor(
