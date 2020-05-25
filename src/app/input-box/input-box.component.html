@@ -1,0 +1,9 @@
+<div>
+  <label>Note:
+    <input #noteText />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(noteText.value); noteText.value=''">
+    add
+  </button>
+</div>
