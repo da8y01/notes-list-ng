@@ -1,17 +1,30 @@
 import { Component } from '@angular/core';
 
-import { products } from '../products';
+import { Note } from '../note';
+import { NotesService } from '../services/notes.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
+  providers: [NotesService],
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products = products;
+  notes: Note[];
+
+  constructor(private notesService: NotesService) {}
 
   share() {
     window.alert('The product has been shared!');
+  }
+
+  ngOnInit() {
+    this.getNotes();
+  }
+
+  getNotes(): void {
+    this.notesService.getNotes()
+      .subscribe(notes => (this.notes = notes));
   }
 }
 

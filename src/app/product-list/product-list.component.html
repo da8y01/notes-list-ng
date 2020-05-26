@@ -1,19 +1,6 @@
-<h2>Products</h2>
+<h2>Notes</h2>
 
-<div *ngFor="let product of products">
-
-  <h3>
-    <a [title]="product.name + ' details'">
-      {{ product.name }}
-    </a>
-  </h3>
-
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
-  </p>
-
-  <button (click)="share()">
-    Share
-  </button>
-
+<div *ngFor="let note of notes">
+  <p>{{ note.content }}</p>
+  <button (click)="delete()">Delete</button>
 </div>

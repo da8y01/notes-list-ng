@@ -20,7 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: InputBoxComponent },
+      { path: '', component: AppComponent },
     ]),
     FlexLayoutModule
   ],
